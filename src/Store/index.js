@@ -3,6 +3,7 @@ import {
     createStore,
     combineReducers
 } from 'redux';
+import combineActions from 'redux-combine-actions';
 import thunk from 'redux-thunk';
 
 import graphQLClient from '../graphQLClient';
@@ -18,6 +19,7 @@ const configureStore = () => {
         }),
         applyMiddleware(
             graphQLClient.middleware(),
+            combineActions,
             thunk
         )
     );

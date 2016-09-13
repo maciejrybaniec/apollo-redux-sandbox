@@ -1,19 +1,10 @@
 import ApolloClient, { createNetworkInterface, addTypename } from 'apollo-client';
-import { receivedUsers } from 'Actions';
 import config from './config';
 
 import Store from 'Store';
 
 const networkInterface = createNetworkInterface(config.apiURL);
-/*
-networkInterface.useAfter([{
-  applyAfterware({ response }, next) {
-    response.json().then((body) => {
-        Store.dispatch(receivedUsers(body.data.users));
-        next();
-    });
-  }
-}]);*/
+
 
 export default new ApolloClient({
     networkInterface: networkInterface,

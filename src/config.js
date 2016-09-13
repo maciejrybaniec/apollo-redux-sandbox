@@ -1,3 +1,4 @@
 export default {
-    apiURL: 'http://localhost:8080/graphql'
+    apiURL: 'http://localhost:8080/graphql',
+    restURL: ''
 };
