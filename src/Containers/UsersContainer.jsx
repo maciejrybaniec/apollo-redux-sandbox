@@ -36,7 +36,6 @@ const UserItem = (props) => {
 @connect(mapStateToProps, mapDispatchToProps)
 class UsersContainer extends Component {
     render() {
-        console.log('RENDER');
         return (
             <div className="UsersContainer">
             <button onClick={this._onClick} type="button">Dispatch action</button>

@@ -5,6 +5,7 @@ import React, { Component } from 'react';
 
 import { requestedInitialize } from 'Actions/Messenger';
 import { getMessengerState } from 'Reducers/Messenger';
+import NetworksContainer from 'Containers/NetworksContainer';
 
 type MessengerContainerPropsType = {
     initialized: boolean
@@ -35,11 +36,14 @@ class MessengerContainer extends Component {
         }
     }
     render(): React.Element<*> {
-        const { initialized } = this.props;
-        const state = initialized ? 'ready' : 'loading';
         return (
             <section className="MessengerContainer">
-                Messenger Container {state}
+                <div className="MessengerContainer__networks">
+                    <NetworksContainer />
+                </div>
+                <div className="MessengerContainer__root">
+                    Root
+                </div>
             </section>
         );
     }

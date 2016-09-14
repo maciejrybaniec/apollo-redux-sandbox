@@ -4,3 +4,10 @@ export const receivedUsers = (users: Array<Object>) => {
         users: users
     }
 }
+
+export const receivedNetworks = (networks: Array<Object>) => {
+    return {
+        type: 'RECEIVED_NETWORKS',
+        networks: networks
+    }
+}

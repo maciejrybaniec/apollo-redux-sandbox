@@ -1,12 +1,12 @@
 import { initialize } from 'SDK/Messenger/MessengerAPI';
-import { receivedUsers } from 'Actions/Propagator';
+import { receivedNetworks } from 'Actions/Propagator';
 
 export const requestedInitialize = () => {
     return (dispatch) => {
         return initialize().then((response) => {
-            const users = response.context.users;
+            const networks = response.items;
 
-            dispatch(extractMessengerContainer(users));
+            dispatch(extractMessengerContainer(networks));
         })
         .catch((error) => {
 
@@ -14,14 +14,14 @@ export const requestedInitialize = () => {
     }
 };
 
-export const extractMessengerContainer = (users) => {
+export const extractMessengerContainer = (networks) => {
     return {
         types: [
             'EXTRACT_MESSENGER_CONTAINER_START',
             'EXTRACT_MESSENGER_CONTAINER_SUCESS',
             'EXTRACT_MESSENGER_CONTAINER_ERROR'
         ],
-        payload: [receivedUsers.bind(null, users), initalizedMessenger]
+        payload: [receivedNetworks.bind(null, networks), initalizedMessenger]
     };
 }
 
