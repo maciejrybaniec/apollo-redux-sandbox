@@ -6,8 +6,9 @@ const initialState = {
 };
 
 function initialized(state = initialState.initialized, action) {
+    console.log(action.type, 'Dispatched');
     switch (action.type) {
-        case types.INITIALIZED_MESSENGER:
+        case types.INITIALIZED_MESSENGER_SUCESS:
             return true;
             break;
         default:

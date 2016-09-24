@@ -1,4 +1,5 @@
 import 'isomorphic-fetch';
+import { Observable } from 'rxjs';
 
 import config from '../config';
 
@@ -17,7 +18,13 @@ class Transport {
             mode: 'cors'
         };
 
-        return fetch(`${config.restURL}${path}`, _options).then((response) => {
+        return Observable.from(
+            fetch(`${config.restURL}${path}`, _options)
+        ).map((response) => {
+            if (response.status === 401) {
+                throw new Error('UNAUTHORIZED');
+            }
+
             return response.json();
         });
     }
