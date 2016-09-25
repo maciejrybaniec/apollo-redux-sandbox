@@ -6,6 +6,7 @@ export const INITIALIZED_MESSENGER_FAILED = 'INITIALIZED_MESSENGER_FAILED';
 
 /* Users */
 
+export const REQUESTED_USERS = 'REQUESTED_USERS';
 export const RECEIVED_USERS = 'RECEIVED_USERS';
 
 /* Networks */

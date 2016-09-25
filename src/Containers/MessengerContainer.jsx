@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import React, { Component } from 'react';
 
 import { requestedInitialize } from 'Actions/Messenger';
+import { requestedUsers } from 'Actions/Users';
 import { getMessengerState } from 'Reducers/Messenger';
 import NetworksContainer from 'Containers/NetworksContainer';
 
@@ -19,7 +20,8 @@ const mapStateToProps = (state): MessengerContainerPropsType => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        requestedInitialize: bindActionCreators(requestedInitialize, dispatch)
+        requestedInitialize: bindActionCreators(requestedInitialize, dispatch),
+        requestedUsers: bindActionCreators(requestedUsers, dispatch)
     };
 };
 
@@ -31,6 +33,7 @@ class MessengerContainer extends Component {
      */
     componentWillMount() {
         const { initialized, requestedInitialize } = this.props;
+        this.props.requestedUsers();
         if (!initialized) {
             requestedInitialize();
         }

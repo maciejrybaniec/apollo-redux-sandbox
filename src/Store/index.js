@@ -24,6 +24,7 @@ const configureStore = () => {
         }),
         applyMiddleware(
             graphQLClient.middleware(),
+            thunk,
             epicMiddleware
         )
     );

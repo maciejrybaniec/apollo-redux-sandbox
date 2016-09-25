@@ -32,7 +32,7 @@ const initializeMessenger = ($action, store) => {
  * @returns {Observable<Action>}
  */
 const initializeMessengerSucess = ($action, store) => {
-    return $action.ofType(types.INITIALIZED_MESSENGER_SUCESS));
+    return $action.ofType(types.INITIALIZED_MESSENGER_SUCESS);
 }
 
 export default combineEpics(
