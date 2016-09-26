@@ -6,6 +6,8 @@ import React, { Component } from 'react';
 import { requestedInitialize } from 'Actions/Messenger';
 import { requestedUsers } from 'Actions/Users';
 import { getMessengerState } from 'Reducers/Messenger';
+
+import Messenger from 'Components/Messenger';
 import NetworksContainer from 'Containers/NetworksContainer';
 
 type MessengerContainerPropsType = {
@@ -46,6 +48,7 @@ class MessengerContainer extends Component {
                 </div>
                 <div className="MessengerContainer__root">
                     Root
+                    <Messenger />
                 </div>
             </section>
         );

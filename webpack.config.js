@@ -20,7 +20,13 @@ module.exports = {
         loaders: [{
             test: /\.jsx?$/,
             exclude: /node_modules/,
-            loaders:  ['babel']
+            loaders: ['babel']
+        }, {
+            test: /\.scss$/,
+            loaders: ['style', 'css', 'sass']
+        }, {
+            test: /\.css$/,
+            loaders: ['style', 'css']
         }]
     },
     node: {
@@ -29,6 +35,13 @@ module.exports = {
     resolve: {
         extensions: ['', '.js', '.jsx'],
         root: path.join(__dirname, 'src'),
+    },
+    sassLoader: {
+        includePaths: [
+            path.resolve(__dirname, './src')
+        ],
+        outputStyle: 'expanded',
+        sourceMap: true
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
