@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 import * as types from 'Constants/ActionTypes';
 
 const initialState = {
-    models: {};
+    models: {}
 };
 
 function models(state = initialState.models, action) {
