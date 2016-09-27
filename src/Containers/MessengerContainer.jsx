@@ -20,11 +20,9 @@ const mapStateToProps = (state): MessengerContainerPropsType => {
     };
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        requestedInitialize: bindActionCreators(requestedInitialize, dispatch),
-        requestedUsers: bindActionCreators(requestedUsers, dispatch)
-    };
+const mapDispatchToProps = {
+  requestedInitialize,
+  requestedUsers
 };
 
 @connect(mapStateToProps, mapDispatchToProps)

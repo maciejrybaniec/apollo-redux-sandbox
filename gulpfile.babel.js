@@ -46,9 +46,12 @@ const injectConfig = (config) => {
  * Map models schema to immutable records.
  */
 gulp.task('create-models', () => {
+  process.env.BABEL_ENV = 'process';
   return gulp.src('src/Types/**/*.js')
     .pipe(babel(config.createModels.babel))
     .pipe(gulp.dest(paths.models));
+
+    delete process.env.BABEL_ENV;
 });
 
 /**
@@ -62,6 +65,7 @@ gulp.task('create-shell', function () {
  * Run development server.
  */
 gulp.task('development', () => {
+    process.env.BABEL_ENV = 'development';
     const webpackConfig = require('./webpack.config');
     injectConfig(webpackConfig);
 

@@ -8,6 +8,8 @@ import graphQLClient from './graphQLClient';
 
 import routes from './router';
 
+import NetworkModel from 'SDK/Network/NetworkModel';
+
 if (module.hot) {
   module.hot.accept();
 }
