@@ -4,7 +4,11 @@ const htmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: {
-        app: ['webpack-dev-server/client?http://0.0.0.0:3000', 'webpack/hot/only-dev-server', __dirname + '/src/app.js'],
+        app: [
+            'webpack-dev-server/client?http://0.0.0.0:3000',
+            'webpack/hot/only-dev-server',
+            __dirname + '/src/app.js'
+        ],
         vendor: ['react', 'react-dom', 'react-apollo']
     },
     output: {

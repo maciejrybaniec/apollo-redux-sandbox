@@ -1,9 +1,19 @@
 {
+    "plugins": [
+        "transform-decorators-legacy"
+    ],
+    "presets": [
+        "es2015",
+        "react",
+        "stage-0"
+    ],
     "env": {
         "development": {
             "plugins": [
                 "react-hot-loader/babel",
+                "tcomb",
                 "transform-decorators-legacy",
+                "syntax-flow",
             ],
             "presets": [
                 "es2015",

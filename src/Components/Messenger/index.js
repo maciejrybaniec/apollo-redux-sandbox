@@ -6,7 +6,7 @@ class Messenger extends Component {
     render() {
         return (
             <div className={styles.Messenger}>
-                Messenger Component
+                Messenger Component test
             </div>
         );
     }

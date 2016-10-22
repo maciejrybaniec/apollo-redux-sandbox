@@ -66,7 +66,7 @@ gulp.task('create-shell', function () {
  */
 gulp.task('development', () => {
     process.env.BABEL_ENV = 'development';
-    const webpackConfig = require('./webpack.config');
+    const webpackConfig = require('./webpack.dev.config');
     injectConfig(webpackConfig);
 
     const server = new WebpackDevServer(webpack(webpackConfig), {
@@ -87,7 +87,7 @@ gulp.task('development', () => {
  * Run production build.
  */
 gulp.task('build-production', (callback) => {
-    const webpackConfig = require('./webpack.config');
+    const webpackConfig = require('./webpack.prod.config');
     process.env.BABEL_ENV = 'production';
 
     webpack(webpackConfig, function(err, stats) {

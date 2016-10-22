@@ -1,5 +1,7 @@
 /* @flow */
 
+import Record from 'Decorators/RecordDecorator';
+
 import { Iterable, List, Map } from 'immutable';
 
 function toMap(v): any {
@@ -14,10 +16,13 @@ function toMap(v): any {
   return v;
 }
 
-class NetworkModel {
+@Record()
+class NetworkModel extends Record.Base {
   data: Map<string, any>;
 
   constructor(init: NetworkModelInit) {
+    super();
+
     if (init) {
       this.data = Map({
         id: init.id,
